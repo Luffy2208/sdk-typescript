@@ -719,11 +719,16 @@ describe("OpenAIModel (api: 'responses')", () => {
       ).rejects.toBeInstanceOf(ContextWindowOverflowError)
     })
 
-    it('wraps context overflow message patterns as ContextWindowOverflowError', async () => {
+    it.each([
+      'Input is too long for requested model',
+      'input length and `max_tokens` exceed context limit',
+      'input length and max_tokens exceed context limit',
+      'too many total text bytes',
+    ])('wraps context overflow message pattern "%s" as ContextWindowOverflowError', async (message) => {
       const client: any = {
         responses: {
           create: vi.fn(async () => {
-            throw new Error('too many total text bytes')
+            throw new Error(message)
           }),
         },
       }
