@@ -720,6 +720,10 @@ describe("OpenAIModel (api: 'responses')", () => {
     })
 
     it.each([
+      'maximum context length exceeded',
+      'context_length_exceeded',
+      'too many tokens',
+      'context length',
       'Input is too long for requested model',
       'input length and `max_tokens` exceed context limit',
       'too many total text bytes',

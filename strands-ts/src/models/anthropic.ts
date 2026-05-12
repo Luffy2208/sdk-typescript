@@ -18,6 +18,8 @@ import { MODEL_DEFAULTS, defaultMaxTokensWarningMessage, defaultModelWarningMess
 
 const CONTEXT_WINDOW_OVERFLOW_ERRORS = [
   'prompt is too long',
+  'max_tokens exceeded',
+  'input too long',
   'input is too long',
   'input length exceeds context window',
   'input and output tokens exceed your context limit',

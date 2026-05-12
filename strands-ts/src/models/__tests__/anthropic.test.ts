@@ -360,6 +360,8 @@ describe('AnthropicModel', () => {
 
     it.each([
       'PROMPT IS TOO LONG: request exceeds context window',
+      'max_tokens exceeded',
+      'input too long',
       'input is too long',
       'input length exceeds context window',
       'input and output tokens exceed your context limit',

@@ -10,6 +10,10 @@
  * @see https://platform.openai.com/docs/guides/error-codes
  */
 const CONTEXT_WINDOW_OVERFLOW_PATTERNS = [
+  'maximum context length',
+  'context_length_exceeded',
+  'too many tokens',
+  'context length',
   'Input is too long for requested model',
   'input length and `max_tokens` exceed context limit',
   'too many total text bytes',
